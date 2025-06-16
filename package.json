@@ -3,19 +3,16 @@
   "version": "1.0.0",
   "description": "A web component that displays a 'Fork me on GitHub' ribbon",
   "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch"
+    "build": "vite build"
   },
   "devDependencies": {
+    "github-fork-ribbon-css": "^0.2.3",
     "lit": "^3.3.0",
-    "tsup": "^8.5.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
   }
 }
