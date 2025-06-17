@@ -7,7 +7,7 @@ A web component that displays a "Fork me on Github" ribbon.
 You can install the component via npm:
 
 ```sh
-pnpm install wc-fork-me-on-github
+npm install wc-fork-me-on-github
 ```
 
 And then import it in your JavaScript:
