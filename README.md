@@ -10,13 +10,13 @@ You can install the component via npm:
 npm install wc-fork-me-on-github
 ```
 
-If you are using a module bundler, you can import the component in your JavaScript or TypeScript files:
+And then import it in your JavaScript:
 
 ```js
 import "wc-fork-me-on-github";
 ```
 
-Or you can directly include the script in your HTML:
+Or if you prefer to use it as a script tag, you can include it directly from a CDN:
 
 ```html
 <script type="module" src="https://unpkg.com/wc-fork-me-on-github/index.js"></script>
@@ -24,7 +24,7 @@ Or you can directly include the script in your HTML:
 
 ## Usage
 
-Then, you can use the `<fork-me-on-github>` element in your HTML:
+Now, you can use the `<fork-me-on-github>` element in your HTML:
 
 ```html
 <wc-fork-me-on-github repository="MR-Addict/wc-fork-me-on-github"></wc-fork-me-on-github>

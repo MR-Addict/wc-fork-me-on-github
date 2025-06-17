@@ -25,7 +25,7 @@
     "dev": "vite dev --mode web",
     "build:web": "vite build --mode web",
     "build:package": "vite build --mode package",
-    "build": "pnpm run build:web && pnpm run build:package",
+    "build": "vite build --mode web && vite build --mode package",
     "preview": "vite preview --mode web"
   },
   "dependencies": {
@@ -33,6 +33,8 @@
     "lit": "^3.3.0"
   },
   "devDependencies": {
+    "github-markdown-css": "^5.8.1",
+    "marked": "^15.0.12",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
     "vite-plugin-dts": "^4.5.4"

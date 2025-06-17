@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 export default defineConfig(({ mode }) => {
   if (mode === "web") {
     return {
-      base: "./",
+      base: "/",
       root: "example",
     };
   }
