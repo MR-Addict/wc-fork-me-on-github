@@ -6,8 +6,8 @@ A web component that displays a "Fork me on Github" ribbon.
 
 You can install the component via npm:
 
-```bash
-npm install wc-fork-me-on-github
+```sh
+pnpm install wc-fork-me-on-github
 ```
 
 And then import it in your JavaScript:
@@ -35,7 +35,5 @@ Now, you can use the `<fork-me-on-github>` element in your HTML:
 - **`repository`**: The Github repository in the format `owner/repo`. This is required to display the ribbon correctly.
 - **`position`**: The position of the ribbon. Options are `right-top(default)`, `right-bottom`, `left-top`, and `left-bottom`.
 - **`ribbon`**: The text to display on the ribbon. Defaults to "Fork me on Github".
-
-## References
-
-Thanks to the original creator, Simon Whitaker, for the [Fork me on Github](https://github.com/simonwhitaker/github-fork-ribbon-css) which I used to bundle into this component.
+- **`color`**: The color of the ribbon. Defaults to `#a00`. Any valid CSS color value can be used here.
+- **`darkColor`**: If not set, it will default to the same value as `color`.

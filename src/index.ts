@@ -1,22 +1,26 @@
-import ribbonStyles from "github-fork-ribbon-css/gh-fork-ribbon.css?inline";
-
-import { LitElement, html, unsafeCSS } from "lit";
+import { LitElement, css, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
+
+import ribbonStyles from "github-fork-ribbon-css/gh-fork-ribbon.css?inline";
 
 const positions = ["right-top", "left-top", "left-bottom", "right-bottom"] as const;
 type Position = (typeof positions)[number];
 
 @customElement("wc-fork-me-on-github")
 export class WcForkMeOnGithub extends LitElement {
-  static styles = unsafeCSS(ribbonStyles);
+  static styles = css`
+    ${unsafeCSS(ribbonStyles)}
 
-  /**
-   * The text to display on the ribbon.
-   *
-   * Defaults to "Fork me on Github".
-   */
-  @property({ type: String })
-  ribbon: string = "Fork me on Github";
+    .github-fork-ribbon::before {
+      background-color: var(--color);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .github-fork-ribbon::before {
+        background-color: var(--dark-color, var(--color));
+      }
+    }
+  `;
 
   /**
    * The Github repository to link to.
@@ -38,6 +42,36 @@ export class WcForkMeOnGithub extends LitElement {
   @property({ type: String })
   position: Position = "right-top";
 
+  /**
+   * The text to display on the ribbon.
+   *
+   * Defaults to "Fork me on Github".
+   */
+  @property({ type: String })
+  ribbon: string = "Fork me on Github";
+
+  /**
+   * The color of the ribbon.
+   *
+   * Defaults to `#a00`.
+   *
+   * Any valid CSS color value can be used here, such as:
+   * - "red"
+   * - "#ff0000"
+   * - "rgb(255, 0, 0)"
+   * - "hsl(0, 100%, 50%)"
+   */
+  @property({ type: String })
+  color: string = "#a00";
+
+  /**
+   * The dark mode color of the ribbon.
+   *
+   * If not set, it will default to the same value as `color`.
+   */
+  @property({ type: String })
+  darkColor?: string;
+
   attributeChangedCallback(name: string, _old: string | null, value: string | null): void {
     super.attributeChangedCallback(name, _old, value);
     if (name === "repository") {
@@ -56,6 +90,7 @@ export class WcForkMeOnGithub extends LitElement {
       target="_blank"
       title="${this.ribbon}"
       data-ribbon="${this.ribbon}"
+      style="--color: ${this.color}; --dark-color: ${this.darkColor || this.color};"
       href="https://github.com/${this.repository}"
       class="github-fork-ribbon fixed ${this.position}"
     >
