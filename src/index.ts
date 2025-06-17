@@ -3,6 +3,9 @@ import ribbonStyles from "github-fork-ribbon-css/gh-fork-ribbon.css?inline";
 import { LitElement, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
+const positions = ["right-top", "left-top", "left-bottom", "right-bottom"] as const;
+type Position = (typeof positions)[number];
+
 @customElement("wc-fork-me-on-github")
 export class WcForkMeOnGithub extends LitElement {
   static styles = unsafeCSS(ribbonStyles);
@@ -33,17 +36,30 @@ export class WcForkMeOnGithub extends LitElement {
    * - "right-bottom"
    */
   @property({ type: String })
-  position: "right-top" | "left-top" | "left-bottom" | "right-bottom" = "right-top";
+  position: Position = "right-top";
+
+  attributeChangedCallback(name: string, _old: string | null, value: string | null): void {
+    super.attributeChangedCallback(name, _old, value);
+    if (name === "repository") {
+      if (!value) throw new Error("The 'repository' attribute must not be empty.");
+      const match = value.match(/^([^/]+)\/([^/]+)$/);
+      if (!match) throw new Error("The 'repository' attribute must be in the format 'owner/repository'.");
+    }
+
+    if (name === "position" && !positions.includes(value as Position)) {
+      throw new Error(`Invalid 'position' attribute value. Expected one of ${positions.join(", ")}.`);
+    }
+  }
 
   render() {
     return html`<a
       target="_blank"
       title="${this.ribbon}"
       data-ribbon="${this.ribbon}"
-      class="github-fork-ribbon fixed ${this.position}"
       href="https://github.com/${this.repository}"
+      class="github-fork-ribbon fixed ${this.position}"
     >
-      Fork me on Github
+      ${this.ribbon}
     </a>`;
   }
 }
