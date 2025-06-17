@@ -19,7 +19,7 @@ import "wc-fork-me-on-github";
 Or you can directly include the script in your HTML:
 
 ```html
-<script type="module" src="https://unpkg.com/wc-fork-me-on-github"></script>
+<script type="module" src="https://unpkg.com/wc-fork-me-on-github/index.js"></script>
 ```
 
 ## Usage
