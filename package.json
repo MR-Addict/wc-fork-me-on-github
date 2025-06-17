@@ -1,6 +1,6 @@
 {
   "name": "wc-fork-me-on-github",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "MR Addict <MR-Addict@qq.com>",
   "description": "A web component that displays a 'Fork me on Github' ribbon",
   "license": "MIT",
