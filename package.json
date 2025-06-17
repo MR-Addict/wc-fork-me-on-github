@@ -3,16 +3,24 @@
   "version": "1.0.0",
   "description": "A web component that displays a 'Fork me on GitHub' ribbon",
   "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "vite build"
+    "dev": "vite dev --mode web",
+    "build:web": "vite build --mode web",
+    "build:package": "vite build --mode package",
+    "build": "pnpm run build:web && pnpm run build:package",
+    "preview": "vite preview --mode web"
   },
   "devDependencies": {
     "github-fork-ribbon-css": "^0.2.3",
     "lit": "^3.3.0",
     "typescript": "^5.8.3",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4"
   }
 }

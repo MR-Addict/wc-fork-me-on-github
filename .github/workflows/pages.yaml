@@ -22,14 +22,13 @@ jobs:
           restore-keys: ${{ runner.OS }}-npm-cache-
 
       - run: npm install
-      - run: npm run build
-      - run: mkdir out && mv dist out && mv index.html out
+      - run: npm run build:web
 
       - name: Deploy to github pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: gh-pages
-          build_dir: out
+          build_dir: example/dist
           jekyll: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
