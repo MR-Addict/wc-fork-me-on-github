@@ -1,6 +1,6 @@
-# WC Fork me on GitHub
+# WC Fork me on Github
 
-A web component that displays a "Fork me on GitHub" ribbon.
+A web component that displays a "Fork me on Github" ribbon.
 
 ## Installation
 
@@ -34,8 +34,8 @@ Attributes:
 
 - `repository`: The Github repository in the format `owner/repo`. This is required to display the ribbon correctly.
 - `position`: The position of the ribbon. Options are `right-top(default)`, `right-bottom`, `left-top`, and `left-bottom`.
-- `ribbon`: The text to display on the ribbon. Defaults to "Fork me on GitHub".
+- `ribbon`: The text to display on the ribbon. Defaults to "Fork me on Github".
 
 ## References
 
-Thanks to the original creator, Simon Whitaker, for the [Fork me on GitHub](https://github.com/simonwhitaker/github-fork-ribbon-css) which I used to bundle into this component.
+Thanks to the original creator, Simon Whitaker, for the [Fork me on Github](https://github.com/simonwhitaker/github-fork-ribbon-css) which I used to bundle into this component.

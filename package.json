@@ -2,7 +2,7 @@
   "name": "wc-fork-me-on-github",
   "version": "1.0.0",
   "author": "MR Addict <MR-Addict@qq.com>",
-  "description": "A web component that displays a 'Fork me on GitHub' ribbon",
+  "description": "A web component that displays a 'Fork me on Github' ribbon",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -26,7 +26,8 @@
     "build:web": "vite build --mode web",
     "build:package": "vite build --mode package",
     "build": "pnpm run build:web && pnpm run build:package",
-    "preview": "vite preview --mode web"
+    "preview": "vite preview --mode web",
+    "publish": "npm publish --access public"
   },
   "dependencies": {
     "github-fork-ribbon-css": "^0.2.3",

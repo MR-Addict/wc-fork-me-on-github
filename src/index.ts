@@ -19,7 +19,7 @@ export class WcForkMeOnGithub extends LitElement {
   ribbon: string = "Fork me on Github";
 
   /**
-   * The GitHub repository to link to.
+   * The Github repository to link to.
    *
    * It should be in the format "owner/repository".
    */
