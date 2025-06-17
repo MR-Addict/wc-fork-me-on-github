@@ -1,4 +1,4 @@
-# WC Fork me on Github
+# WC Fork me on Github ![npm](https://img.shields.io/npm/v/wc-fork-me-on-github)
 
 A web component that displays a "Fork me on Github" ribbon.
 
@@ -30,11 +30,11 @@ Then, you can use the `<fork-me-on-github>` element in your HTML:
 <wc-fork-me-on-github repository="MR-Addict/wc-fork-me-on-github"></wc-fork-me-on-github>
 ```
 
-Attributes:
+## Attributes
 
-- `repository`: The Github repository in the format `owner/repo`. This is required to display the ribbon correctly.
-- `position`: The position of the ribbon. Options are `right-top(default)`, `right-bottom`, `left-top`, and `left-bottom`.
-- `ribbon`: The text to display on the ribbon. Defaults to "Fork me on Github".
+- **`repository`**: The Github repository in the format `owner/repo`. This is required to display the ribbon correctly.
+- **`position`**: The position of the ribbon. Options are `right-top(default)`, `right-bottom`, `left-top`, and `left-bottom`.
+- **`ribbon`**: The text to display on the ribbon. Defaults to "Fork me on Github".
 
 ## References
 
