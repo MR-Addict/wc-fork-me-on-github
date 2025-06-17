@@ -17,6 +17,7 @@ body {
 .markdown-body {
   width: 100%;
   max-width: 40rem;
+  background-color: transparent !important;
 }
 
 @media (prefers-color-scheme: dark) {
